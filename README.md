@@ -5,19 +5,21 @@ python3 -m venv ./venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
 
-# after add new packages, ref: packages/jit_ai_hello_world-1.0.0/README.md
+cd packages/jit-ai-hello-world
+#generate a .tar.gz and .whl file in the `dist` directory 
+python3 setup.py sdist bdist_wheel
+
+cd ../../
 python3 python3 generate_index.py
 
-cd packages
-python -m http.server 8000
-
-pip install jit_ai_hello_world --extra-index-url http://localhost:8000
+#install
+pip install jit-ai-hello-world --extra-index-url https://juniorit-ai.github.io/pip-mockup-kit/packages
 ```
 
 requirements.txt file
 ```
 # requirements.txt 
---extra-index-url http://localhost:8000
+--extra-index-url https://juniorit-ai.github.io/pip-mockup-kit/packages
 ```
 
 ```bash
@@ -30,15 +32,15 @@ Create or edit the pip.conf file, which is usually located at ~/.config/pip/pip.
 
 ```
 [global]
-extra-index-url = http://localhost:8000
+extra-index-url = https://juniorit-ai.github.io/pip-mockup-kit/packages
 ```
  
 or
 
 ```bash
-export PIP_EXTRA_INDEX_URL=http://localhost:8000
+export PIP_EXTRA_INDEX_URL=https://juniorit-ai.github.io/pip-mockup-kit/packages
 
-pip install jit_ai_hello_world
+pip install jit-ai-hello-world
 ```
 
 
