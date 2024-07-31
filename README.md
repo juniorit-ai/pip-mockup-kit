@@ -52,3 +52,8 @@ To check the latest version of a package on PyPI without installing it
 ```bash
 pip3 install --dry-run --no-deps <package-name>
 ```
+
+Force reinstall
+```bash
+pip3 install --upgrade --force-reinstall --no-deps <package-name>
+```

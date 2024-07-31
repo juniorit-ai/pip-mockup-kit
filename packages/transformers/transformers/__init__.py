@@ -1,18 +1,25 @@
 # Mockup of transformers library for phi3_inference.py
 
 from typing import Dict, Any
+import torch
 
 def set_seed(seed: int) -> None:
     """Set the random seed for reproducibility."""
     pass
+
+class TokenizerOutput(dict):
+    def to(self, device: str) -> 'TokenizerOutput':
+        # In a real implementation, this would move the tensors to the specified device
+        # For this mockup, we'll just return self
+        return self
 
 class AutoTokenizer:
     @staticmethod
     def from_pretrained(pretrained_model_name_or_path: str, **kwargs) -> 'AutoTokenizer':
         return AutoTokenizer()
 
-    def __call__(self, text: str, return_tensors: str = "pt", **kwargs) -> Dict[str, Any]:
-        return {"input_ids": None, "attention_mask": None}
+    def __call__(self, text: str, return_tensors: str = "pt", **kwargs) -> TokenizerOutput:
+        return TokenizerOutput({"input_ids": torch.tensor([]), "attention_mask": torch.tensor([])})
 
     def decode(self, token_ids, skip_special_tokens: bool = False) -> str:
         return ""

@@ -37,6 +37,15 @@ class no_grad:
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
 
+class Tensor:
+    def __init__(self, data=None):
+        self.data = data
+
+    def to(self, device):
+        # In a real implementation, this would move the tensor to the specified device
+        # For this mockup, we'll just return self
+        return self
+
 def set_seed(seed):
     pass
 
@@ -48,3 +57,7 @@ def save(obj, f, pickle_protocol=None, pickle_module=None):
 
 def load(f, map_location=None, pickle_module=None):
     pass
+
+# Add a function to create a tensor, similar to torch.tensor()
+def tensor(data):
+    return Tensor(data)
