@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='jit-ai-hello-world',
-    version='1.0.1',
+    name='jit_ai_hello_world',
+    version='1.0.2',
     author='Your Name',
     author_email='your.email@example.com',
     description='A brief description of your package',
