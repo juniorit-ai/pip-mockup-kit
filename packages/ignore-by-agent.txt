@@ -1,0 +1,2 @@
+# Add file line by line to be ignored by the agent.
+jit-ai-hello-world

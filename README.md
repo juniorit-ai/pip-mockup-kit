@@ -13,7 +13,12 @@ cd ../../
 python3 generate_index.py
 
 #install
-pip install jit-ai-hello-world --extra-index-url https://juniorit-ai.github.io/pip-mockup-kit/packages
+pip3 install jit-ai-hello-world --extra-index-url https://juniorit-ai.github.io/pip-mockup-kit/packages
+
+#local test
+python3 -m http.server 8000
+export PIP_EXTRA_INDEX_URL=http://localhost:8000/packages
+pip3 install jit-ai-hello-world
 ```
 
 requirements.txt file
@@ -40,8 +45,10 @@ or
 ```bash
 export PIP_EXTRA_INDEX_URL=https://juniorit-ai.github.io/pip-mockup-kit/packages
 
-pip install jit-ai-hello-world
+pip3 install jit-ai-hello-world
 ```
 
-
-
+To check the latest version of a package on PyPI without installing it
+```bash
+pip3 install --dry-run --no-deps <package-name>
+```
