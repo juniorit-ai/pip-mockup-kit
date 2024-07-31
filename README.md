@@ -10,7 +10,7 @@ cd packages/jit-ai-hello-world
 python3 setup.py sdist bdist_wheel
 
 cd ../../
-python3 python3 generate_index.py
+python3 generate_index.py
 
 #install
 pip install jit-ai-hello-world --extra-index-url https://juniorit-ai.github.io/pip-mockup-kit/packages
